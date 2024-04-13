@@ -1,8 +1,6 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
-const { compilerOptions } = require('./tsconfig');
-
 module.exports = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -124,7 +122,7 @@ module.exports = {
     // A list of paths to directories that Jest should use to search for files in
     roots: ['./src'],
 
-    modulePaths: [compilerOptions.baseUrl],
+    // modulePaths: [compilerOptions.baseUrl],
     /* moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
         useESM: true,
     }), */

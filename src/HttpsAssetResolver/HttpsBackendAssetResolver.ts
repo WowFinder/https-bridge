@@ -65,17 +65,25 @@ class HttpsBackendAssetResolver extends AsyncAssetResolver {
     }
 
     resolveSpell(key: string): Promise<Spell> {
-        return fetch(this.#assetUrlBuilder(AssetType.spells, key).toString())
-            .then(response => response.json())
-            .then(json => new Spell(json));
+        return (
+            fetch(this.#assetUrlBuilder(AssetType.spells, key).toString())
+                // .then(response => response.json())
+                .then(() => {
+                    throw new Error('Spell raw builder not yet implemented!');
+                })
+        );
     }
 
     resolveSpellList(key: string): Promise<SpellList> {
-        return fetch(
-            this.#assetUrlBuilder(AssetType.spellLists, key).toString(),
-        )
-            .then(response => response.json())
-            .then(json => new SpellList(json));
+        return (
+            fetch(this.#assetUrlBuilder(AssetType.spellLists, key).toString())
+                // .then(response => response.json())
+                .then(() => {
+                    throw new Error(
+                        'SpellList raw builder not yet implemented!',
+                    );
+                })
+        );
     }
 
     list(type: ResolvableAssetType): Promise<string[]> {
